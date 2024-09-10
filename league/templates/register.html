@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register for F1 Esports League</title>
+    {% load static %}  <!-- Load static template tag here -->
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>Register for the F1 Esports League</h2>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+    <div class="form-container">
+        <h2>Register for the F1 Esports League</h2>
+        <form method="POST" class="registration-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" id="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- Thank you message (hidden by default) -->
+    <div class="thank-you" id="thank-you-message">
+        <h3>Thank you for registering!</h3>
+        <p>We will get in touch with you shortly.</p>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="spinner" id="spinner"></div>
+
+    <script>
+        const form = document.querySelector('.registration-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        const spinner = document.getElementById('spinner');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            spinner.style.display = 'block';
+
+            // Simulate form submission delay (remove this for real submissions)
+            setTimeout(() => {
+                form.style.display = 'none';
+                spinner.style.display = 'none';
+                thankYouMessage.style.display = 'block';
+            }, 2000);  // Simulates 2 seconds of loading time
+        });
+    </script>
 </body>
 </html>

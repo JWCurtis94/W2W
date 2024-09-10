@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4jl8hgpcb-7cov!2ek0e%(2*3)515pnv9zqou7q0$-wq*-yzd#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jwcurtis94-w2w-6c42nrpavxh.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-jwcurtis94-w2w-pt1mggi4seg.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -55,8 +55,8 @@ ROOT_URLCONF = 'f1_esports_league.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],  # Global template directory
+        'APP_DIRS': True,  # Tells Django to look for templates inside app directories
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
