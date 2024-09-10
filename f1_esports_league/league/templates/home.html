@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Esports League</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'f1_esports_league/league/static/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/register/">Registration</a></li>
+            <li><a href="/rules/">Rules</a></li>
+            <li><a href="/info/">Information</a></li>
+            <li><a href="/calendar/">Calendar</a></li>
+            <li><a href="/fia/">FIA</a></li>
+            <li><a href="/login/">Log in</a></li>
+            <li><a href="/standings/">Standings</a></li>
+        </ul>
+    </nav>
+
+    <div class="background-video">
+        <video autoplay muted loop>
+            <source src="{% static 'videos/f1_background.mp4' %}" type="video/mp4">
+        </video>
+        <div class="overlay">
+            <button>Join Us On Track</button>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-box">
+            <h3>About the League</h3>
+            <p>Learn about our F1 Esports league, our values, and what makes us unique in the world of competitive racing.</p>
+        </div>
+        <div class="info-box">
+            <h3>How to Join</h3>
+            <p>Interested in competing with the best drivers? Find out how you can join our community.</p>
+        </div>
+        <div class="info-box">
+            <h3>Latest News</h3>
+            <p>Stay updated with the latest news, race results, and upcoming events in the F1 Esports world.</p>
+        </div>
+    </div>
+</body>
+</html>

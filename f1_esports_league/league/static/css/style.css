@@ -1,0 +1,198 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text */
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .info-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .overlay button {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark transparent navbar */
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff; /* White text */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ff6f61; /* Lightened red hover effect */
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Video Section */
+.background-video {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    filter: brightness(50%); /* Darken the video slightly */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Style */
+.overlay button {
+    background-color: #f44336; /* Red button */
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.overlay button:hover {
+    background-color: #ff6f61;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Information Section */
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+    background-color: #1e1e1e; /* Slightly lighter dark background */
+    position: relative;
+}
+
+.info-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skewY(-5deg); /* Diagonal effect */
+    background-color: #121212;
+    z-index: -1;
+}
+
+.info-box {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent boxes */
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    width: 30%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards; /* Fade-in animation */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-box h3 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.info-box p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Footer with Social Media Links */
+footer {
+    padding: 40px 0;
+    background-color: #121212;
+    text-align: center;
+    color: #fff;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f44336;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
