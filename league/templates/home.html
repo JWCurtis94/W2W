@@ -4,14 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>F1 Esports League</title>
+
+    <!-- Load static files -->
     {% load static %}
+
+    <!-- Link to your CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <!-- Logo (placed inside the body, likely in the header or nav) -->
+    <header>
+      <a href="/">
+        <img src="{% static 'images/W2W.png' %}" alt="Website Logo" class="logo" />
+      </a>
+    </header>
+
+    <!-- Navigation -->
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -25,39 +36,29 @@
       </ul>
     </nav>
 
+    <!-- Background Video -->
     <div class="background-video">
       <video autoplay muted loop>
-        <source
-          src="{% static 'videos/f1_background.mp4' %}"
-          type="video/mp4"
-        />
+        <source src="{% static 'videos/f1_background.mp4' %}" type="video/mp4" />
       </video>
       <div class="overlay">
         <button>Join Us On Track</button>
       </div>
     </div>
 
+    <!-- Information Section -->
     <div class="info-section">
-      <div class="info-box">
+      <div class="info-box info-box-1">
         <h3>About the League</h3>
-        <p>
-          Learn about our F1 Esports league, our values, and what makes us
-          unique in the world of competitive racing.
-        </p>
+        <p>Learn about our F1 Esports league, our values, and what makes us unique in the world of competitive racing.</p>
       </div>
-      <div class="info-box">
+      <div class="info-box info-box-2">
         <h3>How to Join</h3>
-        <p>
-          Interested in competing with the best drivers? Find out how you can
-          join our community.
-        </p>
+        <p>Interested in competing with the best drivers? Find out how you can join our community.</p>
       </div>
-      <div class="info-box">
+      <div class="info-box info-box-3">
         <h3>Latest News</h3>
-        <p>
-          Stay updated with the latest news, race results, and upcoming events
-          in the F1 Esports world.
-        </p>
+        <p>Stay updated with the latest news, race results, and upcoming events in the F1 Esports world.</p>
       </div>
     </div>
   </body>
