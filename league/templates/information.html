@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Esports League - Information</title>
 
-    <!-- Load static for linking CSS files -->
+    <!-- Load static files for linking CSS -->
     {% load static %}
 
-    <!-- Link to CSS file -->
+    <!-- Link to the custom CSS file for the Information page -->
     <link rel="stylesheet" href="{% static 'css/information.css' %}">
 </head>
 <body>
+
     <!-- Navigation Bar -->
     <header class="navbar">
         <h1>F1 Esports League</h1>
@@ -28,29 +29,31 @@
     <!-- Main Content Section -->
     <section class="info-container">
         <h2>About F1 Esports League</h2>
-        <p>Welcome to the F1 Esports League! Here you will find all the necessary information about our league, structure, and what it takes to be a champion. Whether you're new to F1 Esports or a seasoned player, we have everything you need to enjoy a competitive and fun racing experience.</p>
+        <p>Welcome to the F1 Esports League! Here, you'll find all the information about our league, its structure, and what it takes to become a champion. Whether you're new to F1 Esports or an experienced player, we provide everything you need for a competitive and enjoyable racing experience.</p>
 
         <!-- Key Features Section -->
         <div class="features">
+            <!-- Feature 1: Competitive Races -->
             <div class="feature">
                 <i class="icon">🏎️</i>
                 <h3>Competitive Races</h3>
-                <p>Our league features weekly competitive races on official F1 tracks, allowing players to demonstrate their skills in high-speed action.</p>
+                <p>Our league features weekly competitive races on official F1 tracks, where players can showcase their skills in high-speed action.</p>
             </div>
-            <!-- Other features... -->
+            <!-- You can add more feature blocks here -->
         </div>
 
-        <!-- Call to Action -->
+        <!-- Call to Action Section -->
         <div class="cta">
             <h3>Ready to Race?</h3>
-            <p>If you’re ready to join the action, sign up for the next season and get ready to compete with the best F1 Esports racers!</p>
+            <p>If you’re ready to join the action, sign up for the next season and compete with the top F1 Esports racers!</p>
             <a href="{% url 'register' %}" class="btn">Join Now</a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="footer">
         <p>&copy; 2024 F1 Esports League | All Rights Reserved</p>
     </footer>
+
 </body>
 </html>

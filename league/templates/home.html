@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Join the ultimate F1 Esports League. Compete with the best drivers on track and stay updated with the latest news." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the ultimate F1 Esports League. Compete with the best drivers on track and stay updated with the latest news.">
     <title>F1 Esports League</title>
+
+    <!-- Load Django static files -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   </head>
   <body>
-    <!-- Logo in the middle with nav on both sides -->
+
+    <!-- Header with navigation and logo centered -->
     <header>
       <nav>
         <ul class="nav-left">
@@ -20,10 +25,12 @@
           <li><a href="/register/">Registration</a></li>
           <li><a href="{% url 'rules' %}">Rules</a></li>
         </ul>
+
         <!-- Logo centered in the nav -->
         <a href="/">
-          <img src="{% static 'images/W2W.png' %}" alt="Website Logo" class="logo" />
+          <img src="{% static 'images/W2W.png' %}" alt="Website Logo" class="logo">
         </a>
+
         <ul class="nav-right">
           <li><a href="/info/">Information</a></li>
           <li><a href="/calendar/">Calendar</a></li>
@@ -32,18 +39,19 @@
       </nav>
     </header>
 
-    <!-- Background Image -->
+    <!-- Background Image with Call to Action -->
     <div class="content-wrapper">
       <div class="background-image">
-        <img src="{% static 'images/website top pic.png' %}" alt="F1 Background" />
+        <img src="{% static 'images/website top pic.png' %}" alt="F1 Background">
         <div class="overlay">
-          <button>Join Us On Track</button>
+          <a href="/register/" class="button">Join Us On Track</a>
+
         </div>
       </div>
     </div>
 
     <!-- Information Section -->
-    <div class="info-section">
+    <section class="info-section">
       <div class="info-box info-box-1">
         <h3>About the League</h3>
         <p>Learn about our F1 Esports league, our values, and what makes us unique in the world of competitive racing.</p>
@@ -56,21 +64,25 @@
         <h3>Latest News</h3>
         <p>Stay updated with the latest news, race results, and upcoming events in the F1 Esports world.</p>
       </div>
-    </div>
+    </section>
 
-    <!-- Footer Section -->
+    <!-- Footer Section with Social Links -->
     <footer>
       <div class="footer-content">
+        <!-- Social Icons -->
         <div class="social-icons">
           <a href="https://www.youtube.com/@W2WSimRacing" target="_blank" aria-label="Visit us on YouTube">
             <i class="fab fa-youtube"></i>
           </a>
-          <a href="https://discord.com/invite/YOUR_INVITE" target="_blank" aria-label="Join our Discord community">
+          <a href="https://discord.gg/H4u9wrQYU8" target="_blank" aria-label="Join our Discord community">
             <i class="fab fa-discord"></i>
           </a>
         </div>
+
+        <!-- Footer Text -->
         <p>&copy; 2024 F1 Esports League. All rights reserved.</p>
       </div>
     </footer>
+
   </body>
 </html>

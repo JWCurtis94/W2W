@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register for F1 Esports League</title>
-    {% load static %}  <!-- Load static template tag here -->
+
+    <!-- Load Django static files for CSS -->
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Registration Form Container -->
     <div class="form-container">
         <h2>Register for the F1 Esports League</h2>
+
+        <!-- Registration Form -->
         <form method="POST" class="registration-form">
             {% csrf_token %}
             {{ form.as_p }}
@@ -18,33 +26,37 @@
         </form>
     </div>
 
-    <!-- Thank you message (hidden by default) -->
-    <div class="thank-you" id="thank-you-message">
+    <!-- Thank You Message (hidden by default) -->
+    <div class="thank-you" id="thank-you-message" style="display: none;">
         <h3>Thank you for registering!</h3>
         <p>We will get in touch with you shortly.</p>
     </div>
 
-    <!-- Loading Spinner -->
-    <div class="spinner" id="spinner"></div>
+    <!-- Loading Spinner (hidden by default) -->
+    <div class="spinner" id="spinner" style="display: none;"></div>
 
+    <!-- JavaScript for Form Handling -->
     <script>
+        // Form elements
         const form = document.querySelector('.registration-form');
         const submitBtn = document.getElementById('submit-btn');
         const thankYouMessage = document.getElementById('thank-you-message');
         const spinner = document.getElementById('spinner');
 
+        // Form submission event handler
         form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            spinner.style.display = 'block';
+            e.preventDefault();  // Prevent the default form submission behavior
+            submitBtn.disabled = true;  // Disable the submit button to avoid multiple submissions
+            spinner.style.display = 'block';  // Show loading spinner
 
-            // Simulate form submission delay (remove this for real submissions)
+            // Simulate form submission delay (remove in production)
             setTimeout(() => {
-                form.style.display = 'none';
-                spinner.style.display = 'none';
-                thankYouMessage.style.display = 'block';
-            }, 2000);  // Simulates 2 seconds of loading time
+                form.style.display = 'none';  // Hide the form after submission
+                spinner.style.display = 'none';  // Hide the loading spinner
+                thankYouMessage.style.display = 'block';  // Show the thank-you message
+            }, 2000);  // Simulates a 2-second loading time for effect
         });
     </script>
+
 </body>
 </html>

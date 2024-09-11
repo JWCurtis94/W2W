@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Esports League - Calendar</title>
 
-    <!-- Load static for linking CSS files -->
+    <!-- Load static files for linking CSS -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
 </head>
 <body>
+
     <!-- Navigation Bar -->
     <header class="navbar">
         <h1>F1 Esports League</h1>
@@ -29,9 +30,9 @@
         <table class="calendar-table">
             <thead>
                 <tr>
-                    <th>Event</th>
-                    <th>Date</th>
-                    <th>Location</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Location</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,5 +55,6 @@
     <footer class="footer">
         <p>&copy; 2024 F1 Esports League | All Rights Reserved</p>
     </footer>
+
 </body>
 </html>
