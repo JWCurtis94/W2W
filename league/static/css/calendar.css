@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2 {
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1c1c1e;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    color: #ddd;
+}
+
+/* Calendar Section */
+.calendar-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.calendar-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th, .calendar-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.calendar-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+.calendar-table td {
+    color: #555;
+}
+
+.calendar-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.calendar-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Footer */
+.footer {
+    background-color: #1c1c1e;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calendar-container {
+        padding: 10px;
+    }
+
+    .navbar ul li {
+        margin-left: 10px;
+    }
+
+    .calendar-table th, .calendar-table td {
+        font-size: 14px;
+    }
+}

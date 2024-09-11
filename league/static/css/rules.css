@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1c1c1e;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    color: #d1d1d1;
+}
+
+/* Rules Section */
+.rules-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.rules-container h2 {
+    font-size: 28px;
+    color: #222;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #dcdcdc;
+    padding-bottom: 10px;
+}
+
+.rules-list .rule {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.rules-list .rule h3 {
+    font-size: 22px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.rules-list .rule p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background-color: #1c1c1e;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rules-container {
+        padding: 10px;
+    }
+
+    .navbar h1 {
+        font-size: 20px;
+    }
+
+    .navbar ul li {
+        margin-left: 10px;
+    }
+
+    .rules-list .rule h3 {
+        font-size: 18px;
+    }
+
+    .rules-list .rule p {
+        font-size: 14px;
+    }
+}

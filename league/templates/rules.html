@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Esports League - Rules</title>
+    
+    <!-- Load the static tag for CSS -->
+    {% load static %}
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{% static 'css/rules.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <h1>F1 Esports League</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'rules' %}" class="active">Rules</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <!-- Add more links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content section -->
+    <section class="rules-container">
+        <h2>League Rules</h2>
+
+        <div class="rules-list">
+            <div class="rule">
+                <h3>1. Fair Play</h3>
+                <p>All players must compete with integrity and sportsmanship. Cheating, exploiting game bugs, or unsportsmanlike behavior is strictly prohibited and may result in disqualification.</p>
+            </div>
+            <div class="rule">
+                <h3>2. Race Regulations</h3>
+                <p>Each race will follow standard F1 regulations, including the use of official F1 tracks. Players must adhere to pit stop and tire change rules.</p>
+            </div>
+            <div class="rule">
+                <h3>3. Qualifying and Race Structure</h3>
+                <p>Each race weekend will consist of a qualifying session followed by the race. Points will be awarded based on final race standings, following the official F1 point system.</p>
+            </div>
+            <div class="rule">
+                <h3>4. Communication</h3>
+                <p>Players are required to communicate via the league's official Discord server. Coordinating race times and updates will be done through this platform.</p>
+            </div>
+            <div class="rule">
+                <h3>5. Penalties</h3>
+                <p>Track cutting, intentional collisions, or any form of unsportsmanlike conduct will result in penalties ranging from time penalties to race bans.</p>
+            </div>
+            <!-- Add more rules as needed -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 F1 Esports League | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
 from .forms import RegistrationForm
+from .models import DriverProfile
 
 # Registration View
 def registration_view(request):
@@ -8,8 +10,7 @@ def registration_view(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            # Optionally, you can send an email notification to the admin here
-            return redirect('home')  # Redirect to the home page after successful registration
+            return redirect('home')
     else:
         form = RegistrationForm()
     return render(request, 'register.html', {'form': form})
@@ -17,21 +18,49 @@ def registration_view(request):
 # Driver Profile View with role-based access
 @login_required
 def driver_profile_view(request):
-    profile = request.user.driverprofile  # Assuming the user has a related DriverProfile object
+    profile = get_object_or_404(DriverProfile, user=request.user)
 
+    # Role-based access handling
     if profile.role.name == 'Driver':
-        # If the user is a Driver, show them limited information (e.g., FIA posts, standings, etc.)
         return render(request, 'profile_driver.html', {'profile': profile})
     elif profile.role.name == 'FIA':
-        # If the user is FIA, show all information
         return render(request, 'profile_fia.html', {'profile': profile})
     elif profile.role.name == 'Admin':
-        # If the user is an Admin, show all information with editing rights
         return render(request, 'profile_admin.html', {'profile': profile})
     else:
-        # If none of these roles match, you can handle it accordingly
-        return redirect('home')
+        raise Http404("Invalid role assigned to the profile.")
 
 # Home View
 def home_view(request):
     return render(request, 'home.html')
+
+def rules_view(request):
+    return render(request, 'rules.html')
+
+def information_view(request):
+    return render(request, 'information.html')
+
+# Sample event data
+events_data = [
+    {"name": "Grand Prix 1", "date": "2024-04-12", "location": "Monaco"},
+    {"name": "Grand Prix 2", "date": "2024-04-26", "location": "Silverstone"},
+    {"name": "Grand Prix 3", "date": "2024-05-10", "location": "Spa-Francorchamps"},
+]
+
+# Calendar View
+def calendar_view(request):
+    return render(request, 'calendar.html', {'events': events_data})
+
+# Standings
+from django.shortcuts import render
+
+# Sample driver standings data
+standings_data = [
+    {"position": 1, "name": "Driver A", "team": "Team Red", "points": 150},
+    {"position": 2, "name": "Driver B", "team": "Team Blue", "points": 130},
+    {"position": 3, "name": "Driver C", "team": "Team Green", "points": 120},
+]
+
+# Standings View
+def standings_view(request):
+    return render(request, 'standings.html', {'drivers': standings_data})
