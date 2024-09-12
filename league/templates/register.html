@@ -19,7 +19,7 @@
         <h2>Register for the F1 Esports League</h2>
 
         <!-- Registration Form -->
-        <form method="POST" class="registration-form">
+        <form method="POST" class="registration-form" id="registration-form">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" id="submit-btn">Submit</button>
@@ -33,30 +33,51 @@
     </div>
 
     <!-- Loading Spinner (hidden by default) -->
-    <div class="spinner" id="spinner" style="display: none;"></div>
+    <div class="spinner" id="spinner" style="display: none;">
+        <div class="loader"></div> <!-- Add a loader div inside the spinner -->
+    </div>
 
     <!-- JavaScript for Form Handling -->
     <script>
         // Form elements
-        const form = document.querySelector('.registration-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const thankYouMessage = document.getElementById('thank-you-message');
-        const spinner = document.getElementById('spinner');
+const form = document.getElementById('registration-form');
+const submitBtn = document.getElementById('submit-btn');
+const thankYouMessage = document.getElementById('thank-you-message');
+const spinner = document.getElementById('spinner');
 
-        // Form submission event handler
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();  // Prevent the default form submission behavior
-            submitBtn.disabled = true;  // Disable the submit button to avoid multiple submissions
-            spinner.style.display = 'block';  // Show loading spinner
+// Form submission event handler
+form.addEventListener('submit', function (e) {
+    e.preventDefault();  // Prevent the default form submission behavior
+    submitBtn.disabled = true;  // Disable the submit button to avoid multiple submissions
+    spinner.style.display = 'block';  // Show loading spinner
 
-            // Simulate form submission delay (remove in production)
-            setTimeout(() => {
-                form.style.display = 'none';  // Hide the form after submission
-                spinner.style.display = 'none';  // Hide the loading spinner
-                thankYouMessage.style.display = 'block';  // Show the thank-you message
-            }, 2000);  // Simulates a 2-second loading time for effect
-        });
-    </script>
-
-</body>
-</html>
+    // Submit form via AJAX (or proceed with the normal form submission)
+    const formData = new FormData(form);
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}',
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            // Hide form and spinner, show thank-you message
+            form.style.display = 'none';
+            spinner.style.display = 'none';
+            thankYouMessage.style.display = 'block';
+        } else {
+            return response.json().then(data => {
+                // Handle form errors (if any)
+                console.error('Form submission error:', data);
+                submitBtn.disabled = false;
+                spinner.style.display = 'none'; // Hide spinner if there's an error
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        submitBtn.disabled = false;
+        spinner.style.display = 'none'; // Hide spinner if there's an error
+    });
+});

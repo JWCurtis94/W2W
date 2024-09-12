@@ -92,7 +92,7 @@ nav ul li a:hover {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.overlay button {
+.overlay .button {
     background-color: #f44336;
     color: white;
     padding: 20px 40px;
@@ -102,9 +102,11 @@ nav ul li a:hover {
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none; /* Removes hyperlink underline */
+    display: inline-block; /* Makes the anchor behave like a button */
 }
 
-.overlay button:hover {
+.overlay .button:hover {
     background-color: #ff6f61;
     transform: scale(1.05);
 }

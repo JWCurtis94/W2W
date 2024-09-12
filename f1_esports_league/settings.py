@@ -25,14 +25,13 @@ SECRET_KEY = 'django-insecure-4jl8hgpcb-7cov!2ek0e%(2*3)515pnv9zqou7q0$-wq*-yzd#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jwcurtis94-w2w-g9c551jaywx.ws.codeinstitute-ide.net'
-                 '127.0.0.1',
-                 'localhost', 
-                 '8000-jwcurtis94-w2w-g9c551jaywx.ws.codeinstitute-ide.net', ]
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-jwcurtis94-w2w-g9c551jaywx.ws.codeinstitute-ide.net',  # Add your specific origin here
+ALLOWED_HOSTS = ALLOWED_HOSTS = [
+    '127.0.0.1', 
+    'localhost', 
+    '8000-jwcurtis94-w2w-mckoc2nwpi6.ws.codeinstitute-ide.net'
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-jwcurtis94-w2w-mckoc2nwpi6.ws.codeinstitute-ide.net',]
 
 
 # Application definition
